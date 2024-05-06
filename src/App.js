@@ -7,8 +7,8 @@ const Div = styled.div`
 export const App = () => {
 	return (
 		<Div>
-			<i className="fa fa-calendar "></i>
 			<div>123</div>
+			<i className="fa fa-calendar "></i>
 		</Div>
 	);
 };
