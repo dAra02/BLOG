@@ -1,47 +1,61 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Icon } from '../../../../components';
+import { useSelector, useDispatch } from 'react-redux';
+import { Icon, Button } from '../../../../components';
 import styled from 'styled-components';
+import { ROLE } from '../../../../constants';
+import { selectorUserLogin, selectorUserRole, selectUserSession } from '../../../../selectors';
+import { logout } from '../../../../actions';
 
 const RightAligned = styled.div`
 	display: flex;
 	justify-content: flex-end;
-`;
-
-const StyleLink = styled(Link)`
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	font-size: 18px;
-	width: 100px;
-	height: 32px;
-	border: 1px solid #000;
-	background-color: #eee;
 `;
 
-const StyleButton = styled.div`
+const StyleIcon = styled.div`
 	&:hover {
 		cursor: pointer;
 	}
 `;
 
+const UserName = styled.div`
+	font-size: 18px;
+	font-weight: bold;
+`;
+
 const ControlPanelContainer = ({ className }) => {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const roleId = useSelector(selectorUserRole);
+	const login = useSelector(selectorUserLogin);
+	const session = useSelector(selectUserSession);
 
 	return (
 		<div className={className}>
 			<RightAligned>
-				<StyleLink to="/login">Войти</StyleLink>
+				{roleId === ROLE.GUEST ? (
+					<Button>
+						<Link to="/login">Войти</Link>
+					</Button>
+				) : (
+					<>
+						<UserName>{login}</UserName>
+						<StyleIcon>
+							<Icon id="fa-sign-out" margin="0 0 0 10px" onClick={() => dispatch(logout(session))} />
+						</StyleIcon>
+					</>
+				)}
 			</RightAligned>
 			<RightAligned>
-				<StyleButton onClick={() => navigate(-1)}>
-					<Icon id="fa-backward" margin="10px 0px 0 0px" />
-				</StyleButton>
+				<StyleIcon onClick={() => navigate(-1)}>
+					<Icon id="fa-backward" margin="10px 0 0 0" />
+				</StyleIcon>
 
 				<Link to="/post">
-					<Icon id="fa-file-text-o" margin="10px 0px 0 16px" />
+					<Icon id="fa-file-text-o" margin="10px 0 0 16px" />
 				</Link>
 				<Link to="/users">
-					<Icon id="fa-users" margin="10px 0px 0 16px" />
+					<Icon id="fa-users" margin="10px 0 0 16px" />
 				</Link>
 			</RightAligned>
 		</div>
