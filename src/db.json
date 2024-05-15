@@ -8,35 +8,35 @@
       "role_id": 0
     },
     {
-      "id": "d4c5",
+      "id": "6d98",
       "login": "ivan",
-      "password": "qwerty123",
-      "registed_at": "2061-07-16 19:55",
+      "password": "qwe123",
+      "registed_at": "2048-10-07 15:10",
       "role_id": 2
     },
     {
-      "id": "48a3",
+      "id": "db8f",
       "login": "ivan2",
-      "password": "qwerty123",
-      "registed_at": "2046-05-04 06:27",
+      "password": "qwe123",
+      "registed_at": "2062-12-30 08:57",
       "role_id": 2
     }
   ],
   "roles": [
     {
-      "id": "0",
+      "id": 0,
       "name": "Администратор"
     },
     {
-      "id": "1",
+      "id": 1,
       "name": "Модератор"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Читатель"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Гость"
     }
   ],
