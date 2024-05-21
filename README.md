@@ -16,7 +16,7 @@
 -   пользователи - users: id / login / password / registed_at / role_id
 -   роли - roles: id / name
 -   статьи - posts: id / title / image_url / content / publiched_at
--   комментарии - comments: id / author_id / post_id / content
+-   комментарии - comments: id / author_id / post_id / content / publiched_at
 
 Схема(перечень данных которые мы должны там хранить) состояния на BFF:
 
