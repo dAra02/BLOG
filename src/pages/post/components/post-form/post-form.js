@@ -38,7 +38,12 @@ const PostFormContainer = ({ className, post: { id, title, imageUrl, content, pu
 		<div className={className}>
 			<Input value={imageUrlValue} placeholder="Изображение..." onChange={onImageChange} />
 			<Input value={titleValue} placeholder="Заголовок..." onChange={onTitleChange} />
-			<SpecialPanel id={id} publichedAt={publichedAt} margin="20px 0" editButton={<Icon id="fa-floppy-o" size="21px" onClick={onSave} />} />
+			<SpecialPanel
+				id={id}
+				publichedAt={publichedAt}
+				margin="20px 0"
+				editButton={<Icon id="fa-floppy-o" size="21px" margin="0 10px 0 0" onClick={onSave} />}
+			/>
 			<div ref={contentRef} contentEditable={true} suppressContentEditableWarning={true} className="post-text">
 				{content}
 			</div>

@@ -126,7 +126,26 @@
       "post_id": "002",
       "publiched_at": "2053-05-18 23:57",
       "content": "Первый комментарий "
+    },
+    {
+      "author_id": "6d98",
+      "post_id": "002",
+      "publiched_at": "2054-10-15 16:46",
+      "content": "Новый комментарий",
+      "id": "fGtptwG"
     }
   ],
-  "sessions": []
+  "sessions": [
+    {
+      "hash": "0.27202051950716832351417906465940177440643310546875",
+      "user": {
+        "id": "001",
+        "login": "danil",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": 1
+    }
+  ]
 }
